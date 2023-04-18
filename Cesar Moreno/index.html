@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesar Moreno | Bio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden ;
+            
+        }
+        .card{
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            
+        }
+        img{
+            width: 352px;
+        }
+        ul,li{
+            list-style-type: none;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        li:hover{
+            transform: scale(1.1);
+            transition: .3s ease-in-out;
+        }
+        #modal{
+            -webkit-box-shadow:0px 0px 5px 0px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 10;
+            width: 500px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            background-color: white;
+            transition: opacity 1.5s;
+        }
+
+        #fade{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 5;
+            display: none;
+            transition: all linear .2s;
+        }
+        .modal-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:5px 5px 5px 10px;
+        }
+        .modal-body{
+            width: 100%;
+            margin: 5px 5px 0px 5px  ;
+            background-color: transparent;
+        }
+        #btnFechar{
+            cursor: pointer;
+            margin-right: 10px;
+            font-weight: 600;  
+            font-size: 20px;
+            border: none;
+            background-color: transparent;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        #banImg{
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .imgPerfil{
+            width: 500px;
+            background-color: black;
+        }
+
+        @media only screen and (max-width:510px) {
+            #modal{
+                width: 380px;
+            }
+            .imgPerfil{
+                width: 380px;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <ul>
+                <li><a id="bannerYoutube" target="_blank" href="https://www.youtube.com/@CesarMorenooficial/videos">
+                    <img src="/Banner YouTube.png" alt="Banner YouTube">
+                </a></li>
+                <li><a  target="_blank" href="https://www.instagram.com/cesarmorenooficial/">
+                    <img src="/Banner Instagram.png" alt="Banner Instagram">
+                </a></li>
+                <li><a target="_blank" href="https://www.facebook.com/cesarmorenocompositor">
+                    <img src="https://drive.google.com/file/d/1ONjzIyoxhZDh0W0IA8XRjgcwCAxtNaW7/view?usp=share_link" alt="Banner Facebook">
+                </a></li>
+                <li><a target="_blank" href="https://open.spotify.com/artist/50CqKxKlAvFOmTEEiOu6M3">
+                    <img src="/Banner Spotify.png" alt="Banner Spotify">
+                </a></li>
+                <li><a target="_blank" href="https://www.tiktok.com/@cesarmorenno2?ug_source=op.auth&ug_term=Linktr.ee&utm_source=awyc6vc625ejxp86&utm_campaign=tt4d_profile_link&_r=1">
+                    <img src="/Banner TikTok.png" alt="Banner TikTok">
+                </a></li>
+                <li><img id="banImg" onclick="abrirModal()" src="/Banner WhatsApp.png" alt="Banner WhatsApp"></li>
+
+                <div id="modal">
+                    <div class="modal-header">
+                        <h2>Agende Seu Horário</h2>
+                        <button id="btnFechar" onclick="fecharModal()">X</button>
+                    </div>
+                    <div class="modal-body">
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=5554996522078"><img class="imgPerfil" src="/ImgPerfil.png" alt="Imagem de Perfil"></a>                        
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=5554991586607"><img class="imgPerfil" src="/ImgAdson.png" alt="Imagem de Perfil 2"></a>
+                    </div>
+                </div>
+                <div id="fade" onclick="fecharModal()"></div>
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function abrirModal(){
+            $('#modal').css('display','flex');
+            $('#fade').css('display','flex');
+        }
+
+        function fecharModal(){
+            $('#modal').css('display','none');
+            $('#fade').css('display','none');
+        }
+
+    </script>
+</body>
+</html>
